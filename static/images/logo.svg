@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="50" viewBox="0 0 220 50">
+  <rect rx="10" width="50" height="50" fill="#2563eb"/>
+  <text x="15" y="33" fill="white" font-size="22" font-weight="bold">QP</text>
+
+  <text x="65" y="32" fill="#2563eb" font-size="22" font-weight="bold">Quicky</text>
+  <text x="135" y="32" fill="#16a34a" font-size="22" font-weight="bold">Print</text>
+</svg>

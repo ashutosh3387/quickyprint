@@ -1,0 +1,284 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 40px;
+  background: #f3fdf8;
+  border-bottom: 1px solid #cceede;
+}
+
+.nav-left img {
+  height: 80px;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #14532d;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #22c55e;
+}
+
+/* PAGE CONTENT (LOCKED ALIGNMENT) */
+.page-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center !important;
+}
+
+.page-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page-container li {
+  margin: 10px 0;
+}
+
+/* FOOTER (LOCKED) */
+.footer {
+  margin: 80px 0 30px;
+  text-align: center !important;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.footer a {
+  color: #14532d;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 20px;
+  }
+
+  .nav-left img {
+    height: 60px;
+  }
+}
+
+/* =========================
+   HOME PAGE FIX (RESTORE OLD UI)
+   ========================= */
+
+/* hide default file input */
+.drop-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* restore merge button look */
+.btn {
+  display: block;
+  width: 100%;
+  background: #22c55e;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  font-size: 18px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* center everything inside card */
+.card {
+  text-align: center;
+}
+
+/* keep home content visually balanced */
+.container {
+  margin-top: 40px;
+}
+/* =========================
+   RESTORE OLD HOME LOOK
+   ========================= */
+
+/* Features row – exactly like before */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Each feature balanced */
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* Feature icons – controlled size */
+.feature img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   PDF ICON (LOGO STYLE)
+   ========================= */
+.pdf-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  position: relative;
+}
+
+/* white PDF label inside icon */
+.pdf-icon::after {
+  content: "PDF";
+  position: absolute;
+  color: white;
+  font-weight: 800;
+  font-size: 22px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Merge button – not over stretched */
+.btn {
+  max-width: 420px;
+  margin: 30px auto 0;
+}
+
+/* =========================
+   FIX CLICK BUG + DROP ZONE
+   ========================= */
+
+/* file input sirf box ke andar rahe */
+.drop-zone {
+  position: relative;
+  border: 2px dashed #22c55e;
+  border-radius: 20px;
+  padding: 70px 20px;
+  background: #f1fdf7;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.drop-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* drag active */
+.drop-zone.drag-active {
+  background: #dcfce7;
+  border-color: #16a34a;
+}
+
+/* file list */
+#fileList {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#fileList li {
+  background: #ecfdf5;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#fileList button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+/* =========================
+   NAVBAR UNDERLINE HOVER
+   ========================= */
+
+.navbar a {
+  position: relative;
+  text-decoration: none;
+  color: #1f2937; /* same text color */
+  padding-bottom: 6px;
+}
+
+/* underline */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #16a34a; /* green underline */
+  transition: width 0.3s ease;
+}
+
+/* hover effect */
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* active tab (Home etc) */
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   LOADING SPINNER
+   ========================= */
+
+.spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+  border: 3px solid #bbf7d0;
+  border-top: 3px solid #16a34a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* disabled button look */
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}QuickyPrint{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="{{ url_for('static', filename='images/Mainlogo.png') }}">
+  </div>
+  <div class="nav-links">
+  <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+  <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About</a>
+  <a href="/privacy" class="{% if request.path == '/privacy' %}active{% endif %}">Privacy</a>
+  <a href="/terms" class="{% if request.path == '/terms' %}active{% endif %}">Terms</a>
+</div>
+</nav>
+
+<main class="page-container">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  © 2025 QuickyPrint ·
+  <a href="/about">About</a> |
+  <a href="/privacy">Privacy</a> |
+  <a href="/terms">Terms</a>
+</footer>
+
+</body>
+</html>
