@@ -93,3 +93,9 @@ def merge_pdfs():
 
 if __name__ == "__main__":
     app.run(debug=False)
+
+from flask import send_from_directory
+
+@app.route("/ads.txt")
+def ads():
+    return send_from_directory(app.root_path, "ads.txt")
