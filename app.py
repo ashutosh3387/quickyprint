@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, send_from_directory
 from PyPDF2 import PdfMerger
 import os
 import uuid
@@ -90,12 +90,18 @@ def merge_pdfs():
                 os.remove(output_path)
         except:
             pass
-
-if __name__ == "__main__":
-    app.run(debug=False)
-
-from flask import send_from_directory
+        
 
 @app.route("/ads.txt")
 def ads():
     return send_from_directory(app.root_path, "ads.txt")
+
+@app.route("/googlefc763520f72ea317.html")
+def google_verify():
+    return send_from_directory(app.root_path, "googlefc763520f72ea317.html")
+
+if __name__ == "__main__":
+    app.run(debug=False)
+
+
+
