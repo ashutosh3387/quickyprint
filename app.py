@@ -96,6 +96,10 @@ def merge_pdfs():
 def ads():
     return send_from_directory(app.root_path, "ads.txt")
 
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory(app.root_path, "sitemap.xml")
+
 @app.route("/googlefc763520f72ea317.html")
 def google_verify():
     return send_from_directory(app.root_path, "googlefc763520f72ea317.html")
