@@ -100,6 +100,10 @@ def ads():
 def sitemap():
     return send_from_directory(app.root_path, "sitemap.xml")
 
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory(app.root_path, "robots.txt")
+
 @app.route("/googlefc763520f72ea317.html")
 def google_verify():
     return send_from_directory(app.root_path, "googlefc763520f72ea317.html")
